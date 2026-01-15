@@ -11,79 +11,62 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // deklarasikan variable di dalam method build
-    String nama = "Rendy Sulistyawan";
-    int umur = 18;
-    double nilai = 45.5;
-    bool isLulus = nilai >= 76;
+    // Variabel untuk Praktik Operator
+    int a = 10;
+    int b = 5;
+
+    // Operator logika (hasilnya disimpan dalam variable boolean)
+    bool HasilLogika = (a>b&&b<10);
 
     return MaterialApp(
-      debugShowCheckedModeBanner:
-          false, // ini menghilangkan tabel "debug" di pojok
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          centerTitle: true,
           title: Text(
-            'STUDENT PROFILE',
-            style: GoogleFonts.poppins(
-              color: Color.fromARGB(255, 0, 245, 160),
-              fontWeight: FontWeight.w700,
-              letterSpacing: 3,
+            "Operator On Dart"
             ),
-          ),
-          backgroundColor: const Color.fromRGBO(40, 45, 50, 1),
+          backgroundColor: Colors.blueAccent,
         ),
-        body: Stack(
-          children: [
-            // BACKGROUND (logo kecil + transparan)
-            Center(
-              child: Opacity(
-                opacity: 0.10, // transparansi logo
-                child: Image.asset(
-                  'assets/images/logo-smk.png',
-                  width: 1180, // ukuran logo
-                  height: 1180,
-                  fit: BoxFit.contain,
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Aritmatika Section
+              Text(
+                "1. Operator Aritmatika",
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
               ),
-            ),
+              const Divider(), //Garis Pemisah
+              Text("Kurang (10 - 5) : ${a - b}"),
+              Text("Kali   (10 * 5) : ${a * b}"),
+              Text("Bagi   (10 / 5) : ${a / b}"),
 
-            // OVERLAY + CONTENT (INI ASLI PUNYA LU)
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Nama Siswa: $nama",
-                    style: GoogleFonts.poppins(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    "Umur: $umur Tahun",
-                    style: GoogleFonts.poppins(fontSize: 22),
-                  ),
-                  const SizedBox(height: 10),
-                  Text("Nilai: $nilai", style: GoogleFonts.poppins(fontSize: 22)),
-                  const SizedBox(height: 10),
-                  Text(
-                    // ignore: dead_code
-                    "Status kelulusan: ${isLulus ? 'LULUS' : 'DURUNG LULUS'}",
-                    style: GoogleFonts.poppins(
-                      fontSize: 22,
-                      color: isLulus
-                          ? Colors.green.shade600
-                          // ignore: dead_code
-                          : Colors.red.shade600,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+              const SizedBox(height: 25),
+
+              // 2. Seksi Perbandingan
+              Text(
+                "2. Operator Perbandingan",
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18),
               ),
-            ),
-          ],
+              const Divider(),
+              Text("Apakah $a > $b ? : ${a > b}"),
+              Text("Apakah $a == $b ? : ${a == b}"),
+
+              const SizedBox(height: 25),
+
+              // 3. Seksi Logika
+              Text(
+                "3. Operator Logika",
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+              const Divider(),
+              Text("Hasil (a > 5 && b < 10) : $HasilLogika"),
+            ],
+          ),
         ),
       ),
     );
