@@ -89,10 +89,10 @@ class _TodoPageV2State extends State<TodoPagev2> {
       /// FLOATING BUTTON (AMAN)
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue[600],
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
         elevation: 6,
-        child: const Icon(Icons.add, size: 26),
         onPressed: _addTodo,
+        child: const Icon(Icons.assignment_add, color: Colors.black, size: 22),
       ),
 
       body: SafeArea(
@@ -208,7 +208,7 @@ class _TodoPageV2State extends State<TodoPagev2> {
                               borderRadius: BorderRadius.circular(14),
                             ),
                             elevation: isCompleted ? 0 : 3,
-                            shadowColor: Colors.blue.withOpacity(0.2),
+                            shadowColor: Colors.blue.withValues(alpha: 0.2),
                             color: isCompleted ? Colors.blue[50] : Colors.white,
                             child: ListTile(
                               contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
