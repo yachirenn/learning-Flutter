@@ -1,4 +1,4 @@
-# pertemuan2
+# This is a repository of my any project of learning flutter
 
 A new Flutter project.
 
