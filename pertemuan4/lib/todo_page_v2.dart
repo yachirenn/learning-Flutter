@@ -104,7 +104,7 @@ class _TodoPageV2State extends State<TodoPagev2> {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.blue[800]!, Colors.blue[600]!],
+                  colors: [const Color(0xFF021C8B), const Color(0xFF1B52D7), const Color(0xFFC0C7D3)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -116,7 +116,7 @@ class _TodoPageV2State extends State<TodoPagev2> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'My To-Do',
+                    'My To-Do List',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 26,
